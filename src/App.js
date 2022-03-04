@@ -3,7 +3,10 @@ import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import ApartmentsPage from "./pages/ApartmentsPage";
-import AddApartmentPage from "./pages/AddApartmentPage";
+import ApartmentDetailPage from "./pages/ApartmentDetailPage";
+import ApartmentEditPage from "./pages/ApartmentEditPage";
+import ApartmentCreatePage from "./pages/ApartmentCreatePage"
+//import AddApartmentPage from "./pages/AddApartmentPage";
 
 function App() {
   return (
@@ -11,7 +14,10 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<ApartmentsPage />} />
+        <Route exact path="/apartments/:apartmentId/edit" element={<ApartmentEditPage />} />
+        <Route exact path="/apartments/:apartmentId" element={<ApartmentDetailPage />} />
+        <Route exact path="/apartments/create" element={<ApartmentCreatePage  />} />
+        <Route exact path="/" element={<ApartmentsPage />} />
       </Routes>
     </div>
   );
